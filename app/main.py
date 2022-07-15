@@ -17,18 +17,10 @@ def create_person_list(people: list) -> list:
                 if 'wife' in person and person['wife'] is not None:
                     Person.people[key].wife = Person.people[person['wife']]
                 elif 'husband' in person and person['husband'] is not None:
-                    Person.people[key].husband = Person.people[person['husband']]
+                    Person.people[key].husband \
+                        = Person.people[person['husband']]
                 else:
                     pass
             else:
                 pass
     return person_list
-
-
-people = [
-    {'name': 'Ross', 'age': 30, 'wife': 'Rachel'},
-    {'name': 'Joey', 'age': 29, 'wife': None},
-    {'name': 'Rachel', 'age': 28, 'husband': 'Ross'}
-]
-
-person_list = create_person_list(people)
